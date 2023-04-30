@@ -1,0 +1,5 @@
+# Output
+lib/
+
+# NPM Dependency
+node_modules/
