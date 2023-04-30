@@ -13,11 +13,11 @@ let tuple: [number, number] = [0, 0];
 tuple = [1, 1];
 tuple = [2, 6];
 
-// Type '[number]' is not assignable to type '[number, number]'. Source has 1 element(s) but target requires 2. [2322]
+// Error => Type '[number]' is not assignable to type '[number, number]'. Source has 1 element(s) but target requires 2. [2322]
 tuple = [5]; // Error: must be 2 items
 
-// Type '[number, number, number]' is not assignable to type '[number, number]'. Source has 3 element(s) but target allows only 2. [2322]
+// Error => Type '[number, number, number]' is not assignable to type '[number, number]'. Source has 3 element(s) but target allows only 2. [2322]
 tuple = [5, 4, 3]; // Error: must be 2 items
 
-// Type 'string' is not assignable to type 'number'. [2322]
+// Error => Type 'string' is not assignable to type 'number'. [2322]
 tuple = ["elite", 1337]; // Error: must be number
