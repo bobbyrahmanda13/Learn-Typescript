@@ -42,8 +42,32 @@
 //
 
 // // menggunakan keyword private pada name
+class Animal {
+  private name: string; // cara lama
+  // #name: string; // cara baru menggunakan pagar(#)
+  constructor(name: string) {
+    this.name = name; // cara lama
+    // this.#name = name;
+  }
+  public move(distanceInMeters: number): void {
+    console.log(`${this.name} moved ${distanceInMeters}m`); // cara lama
+    // console.log(`${this.#name} moved ${distanceInMeters}m`); // cara baru
+  }
+}
+let cat = new Animal("Cat");
+cat.move(10); // tetap bisa di akses/digunakan
+cat.name = "Dog"; // tidak bisa di akses/digunakan secara public
+
+class Bird extends Animal {
+  fly(distanceInMeters: number) {
+    console.log(`${this.name} flew ${distanceInMeters}m`); // cara lama name tidak bisa diakses/digunakan didalam class lain
+    // console.log(`${this.#name} flew ${distanceInMeters}m`); // cara baru name tidak bisa diakses/digunakan didalam class lain
+  }
+}
+
+// menggunakan keyword protected pada name
 // class Animal {
-//   private name: string;
+//   protected name: string;
 //   constructor(name: string) {
 //     this.name = name;
 //   }
@@ -57,26 +81,6 @@
 //
 // class Bird extends Animal {
 //   fly(distanceInMeters: number) {
-//     console.log(`${this.name} flew ${distanceInMeters}m`); // name tidak bisa diakses/digunakan didalam class lain
+//     console.log(`${this.name} flew ${distanceInMeters}m`); // name bisa diakses/digunakan didalam class lain
 //   }
 // }
-
-// menggunakan keyword protected pada name
-class Animal {
-  protected name: string;
-  constructor(name: string) {
-    this.name = name;
-  }
-  public move(distanceInMeters: number): void {
-    console.log(`${this.name} moved ${distanceInMeters}m`);
-  }
-}
-let cat = new Animal("Cat");
-cat.move(10); // tetap bisa di akses/digunakan
-cat.name = "Dog"; // tidak bisa di akses/digunakan secara public
-
-class Bird extends Animal {
-  fly(distanceInMeters: number) {
-    console.log(`${this.name} flew ${distanceInMeters}m`); // name bisa diakses/digunakan didalam class lain
-  }
-}
