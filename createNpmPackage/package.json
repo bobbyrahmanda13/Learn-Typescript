@@ -1,0 +1,16 @@
+{
+  "name": "createNpmPackage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib",
+  "types": "lib",
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
