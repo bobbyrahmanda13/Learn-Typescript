@@ -2,6 +2,7 @@
 let exampleAny: any;
 let exampleUnknown: unknown;
 
+
 // any
 exampleAny = 123;
 exampleAny = "hellow";
