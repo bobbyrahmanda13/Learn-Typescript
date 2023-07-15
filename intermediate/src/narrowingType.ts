@@ -42,7 +42,7 @@ type Square = {
 };
 type Rectangle = { width: number; height: number };
 type Shape = Square | Rectangle;
-function area(shape: Shape) {
+function areaNarrowingType(shape: Shape) {
   if ("size" in shape) {
     return shape.size * shape.size;
   }
@@ -51,5 +51,5 @@ function area(shape: Shape) {
   }
 }
 
-area({ size: 2 }); // 4
-area({ width: 2, height: 3 }); // 6
+areaNarrowingType({ size: 2 }); // 4
+areaNarrowingType({ width: 2, height: 3 }); // 6
