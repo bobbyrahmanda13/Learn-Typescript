@@ -62,7 +62,7 @@ function area(ss: Shapess) {
   // 1. Type 'CircleNeverType' is not assignable to type 'never'. [2322]
   // 2. '_ensureAllCaseAreHandled' is declared but its value is never read. [6133]
 
-  //! Note : dengan cara begini never type dapat membantu orang yang melakukan modifikasi dan mereka dapat memastikan bahwa type baru ini ditanngai secara keseluruhan fungsi type / utilitas
+  //! Note : dengan cara begini never type dapat membantu orang yang melakukan modifikasi dan mereka dapat memastikan bahwa type baru ini ditangani secara keseluruhan fungsi type / utilitas
 
   // cara solved nya
   if (ss.kind === "square") {
