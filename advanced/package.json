@@ -1,5 +1,5 @@
 {
-  "name": "intermediate",
+  "name": "advanced",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,7 +9,7 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "typescript": "^5.1.6"
   }
 }
