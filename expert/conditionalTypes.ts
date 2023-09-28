@@ -22,9 +22,13 @@ export type TypeName<T> =
   T extends symbol ? 'symbol' :
   T extends bigint ? 'bigint' :
   T extends Function ? 'function' :
-  'object'
+  // Tapi untungnya dengan TypeScript, fungsi nama tipe kita bisa lebih baik daripada tipe operator bawaan (javascript)
+  // tambahkan conditional type
+  T extends null ? 'null' : 'object'
 
 function typeName<T>(t: T): TypeName<T> {
+  // tambahan 28-9-23 jam 16:22
+  if (t === null) return 'null' as TypeName<T>
   return typeof t as TypeName<T>
 }
 const str = typeName('hello world')
@@ -34,4 +38,8 @@ const undef = typeName(undefined)
 const sym = typeName(Symbol('start'))
 const big = typeName(24n)
 const func = typeName(function() { })
-const ob = typeName(null)
+
+const obj = typeName(null)
+
+console.log(typeof null); // hasil nya adalah 'object'
+
