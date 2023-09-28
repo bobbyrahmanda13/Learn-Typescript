@@ -31,6 +31,7 @@ function typeName<T>(t: T): TypeName<T> {
   if (t === null) return 'null' as TypeName<T>
   return typeof t as TypeName<T>
 }
+
 const str = typeName('hello world')
 const num = typeName(123)
 const bool = typeName(true)
