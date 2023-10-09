@@ -32,3 +32,19 @@ export type Mapped<T> = {
 export type Result = Mapped<Point>
 
 // contoh lainnya
+
+export type Partial<T> = {
+  [P in keyof T]?: T[P]
+}
+
+export class State<T>{
+  constructor(public current: T) { }
+  update(next: Partial<T>) {
+    this.current = { ...this.current, ...next }
+  }
+}
+const state = new State({ x: 0, y: 0 })
+state.update({ x: 0, y: 123 }) // safe
+state.update({ y: 123 })  // error harus diperbaiki dengan new type
+console.log(state.current); // { x: 0 , y: 123 }
+
