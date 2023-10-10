@@ -33,9 +33,9 @@ export type Result = Mapped<Point>
 
 // contoh lainnya
 
-export type Partial<T> = {
-  [P in keyof T]?: T[P]
-}
+// export type Partial<T> = {
+ //  [P in keyof T]?: T[P]
+// }
 
 export class State<T>{
   constructor(public current: T) { }
@@ -43,8 +43,11 @@ export class State<T>{
     this.current = { ...this.current, ...next }
   }
 }
-const state = new State({ x: 0, y: 0 })
+const state = new State({ x: 0, y: 0, jancok: "lokan", isTrue: true, arrayYay: [1, 2, 3] })
 state.update({ x: 0, y: 123 }) // safe
 state.update({ y: 123 })  // error harus diperbaiki dengan new type
+state.update({ jancok: "testing" })
+state.update({ isTrue: false })
+state.update({ arrayYay: [3] })
 console.log(state.current); // { x: 0 , y: 123 }
 
