@@ -30,3 +30,43 @@ templateLiteralNumber = `Example : false` // di isi dengan boolean maka error
 templateLiteralNumber = `Juancok maneh` // error: not `Example : ${number}`
 
 // use case real particular feature
+type CSSValue =
+  // implies px
+  | number
+  // number + px|em|rem
+  //  | string // karena string maka bisa menggunakan semua type jenis string
+  // jadi now kita gunakan tempalate literal typescript
+  | `${number}px`
+  | `${number}em`
+  | `${number}rem`
+
+function size(input: CSSValue) {
+  return typeof input == 'number' ? input + 'px' : input
+}
+
+// jika function nya digunakan
+size(123)
+size('123px')
+size('12em')
+size('12rem')
+size('129ex') // Error karena jika type CSSValue itu string maka ini tidak akan error, tapi lain hal jika menggunakan template literal typescript
+
+// contoh lainnya
+
+type Size = 'small' | 'medium' | 'large'
+type Color = 'primary' | 'secondary'
+type Style = `${Size}-${Color}`
+/**
+ * @param style is a combination of 
+ * Size: 'small' or 'medium' or 'Large'
+ * Color: 'primary' or 'secondary'
+ * e.g 'small-secondary'
+ */
+function applyStyle(style: Style) {
+  // ..
+}
+
+applyStyle('small-primary')
+applyStyle('large-secondary')
+applyStyle('medium-secondary')
+applyStyle('medim-primary') // error
