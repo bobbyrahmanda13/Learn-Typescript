@@ -26,5 +26,6 @@ type AwaitedResult = Awaited<WrappedInDeep>
 
 // contoh 3
 async function exampleAwaited<T>(input: T) {
-  const output: Awaited<T> = await input
+  // const output: Awaited<T> = await input
+  const output = await input
 }
