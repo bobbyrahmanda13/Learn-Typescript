@@ -114,3 +114,5 @@ initiateLogin4('device')
 initiateLogin4(LoginMode7.device)
 
 Object.keys(LoginMode7) // ['device','email','social']
+
+// end last course udemy
